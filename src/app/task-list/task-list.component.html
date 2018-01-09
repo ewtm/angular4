@@ -1,0 +1,51 @@
+<div class = "center">
+  <label for="">Name:</label>
+  <input type="text" [(ngModel)]="task.name">
+  <br/>
+  <label for="">Value:</label>
+  <input type="number" [(ngModel)]="task.value">
+  <br/>
+  <label for="">Value:</label>
+  <input type="text" [(ngModel)]="task.date_launch">
+
+  <br/><br/>
+  <button type="button" (click)="add()">
+    Adicionar na lista
+  </button>
+
+
+</div>
+<ul>
+  <li *ngFor="let item of tasks" >
+    {{
+      (item.name | uppercase)  + ' - ' +
+      (item.value | formatCurrency) + ' - ' +
+      (item.date_launch | formatDate )
+      
+    }}
+  </li>
+  <!--
+    <li *ngFor="let item of tasks"
+      [innerHtml] ="item.name | uppercase">
+    </li>
+  -->
+</ul>
+<!-- 
+<li  id="list-{{item.name}}
+[style.color]= "item.value > 5  ? 'green':'red' " 
+*ngFor="let item of tasks" [innerHtml]="item.name + ' - ' + item.value">
+
+Id unico : id="list-{{item.name}}"
+{{item.name + " - " + item.value}}
+
+</li>
+<li  [id] = " 'list-' + item.name"
+[ngClass] ="{'item-green':item.value>5,'item-red':item.value<5}"
+*ngFor="let item of tasks" [innerHtml]="item.name + ' - ' + item.value">
+
+Id unico : id="list-{{item.name}}"
+{{item.name + " - " + item.value}}
+
+</li>
+
+-->

@@ -1,0 +1,13 @@
+*{
+    font-family:  cursive
+}
+
+.header {
+    text-align:  center;
+}
+
+h1.title {
+    color:  orangered;
+    font-size: 50px;
+    ;
+}
