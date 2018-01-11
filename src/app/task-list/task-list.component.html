@@ -1,5 +1,5 @@
 <div class = "center">
-  <label for="">Name:</label>
+ <!-- <label for="">Name:</label>
   <input type="text" [(ngModel)]="task.name">
   <br/>
   <label for="">Value:</label>
@@ -9,14 +9,14 @@
   <input type="text" [(ngModel)]="task.date_launch">
 
   <br/><br/>
-  <button type="button" (click)="add()">
+  <button type="button" (click)="add()" >
     Adicionar na lista
   </button>
 
+-->
 
-</div>
 <ul>
-  <li *ngFor="let item of tasks" >
+  <li class="click" *ngFor="let item of tasks"  [myTask]="item">
     {{
       (item.name | uppercase)  + ' - ' +
       (item.value | formatCurrency) + ' - ' +
@@ -30,6 +30,10 @@
     </li>
   -->
 </ul>
+
+<p class="click" myTask></p>
+</div>
+
 <!-- 
 <li  id="list-{{item.name}}
 [style.color]= "item.value > 5  ? 'green':'red' " 

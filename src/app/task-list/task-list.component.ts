@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {Task} from "../task";
+import { TaskService } from '../task.service';
 
 @Component({
   selector: 'task-list',
@@ -8,19 +9,17 @@ import {Task} from "../task";
 })
 export class TaskListComponent  {
 
-  tasks = [];
-  entrada:string =  "";
-  task:Task = {
-      name: "",
-      value :0,
-      date_launch: "2017-07-07",
-  };
+  //Atributo que recebe um valor
   
-  public add(){
-    //criar um objeto para nao repetir na view
-    let task = Object.assign({},this.task);
-    this.tasks.push(task);
-    
+  tasks:Array<Task> ;
+
+  constructor(private taskService:TaskService){
+    this.taskService.tasks.push(
+      {name:'teste',value:50,date_launch:'2018-01-11'}
+    );
+    this.tasks = this.taskService.tasks;
+
   }
+  
 
 }
