@@ -10,7 +10,7 @@ import { TaskService } from './task.service';
 })
 export class AppComponent {
  
-  title = 'Tarefas';
+  title = 'Buscar Cep';
   tasks:Array<Task> ;
 
 /*

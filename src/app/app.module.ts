@@ -10,7 +10,9 @@ import { FormatDatePipe } from './format-date.pipe';
 import { MyTaskDirective } from './my-task.directive';
 import { TaskNewComponent } from './task-new/task-new.component';
 import { TaskService } from './task.service';
-
+import { CepComponent } from './cep/cep.component';
+import { CepService } from './cep.service';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -19,13 +21,15 @@ import { TaskService } from './task.service';
     FormatCurrencyPipe,
     FormatDatePipe,
     MyTaskDirective,
-    TaskNewComponent
+    TaskNewComponent,
+    CepComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpModule
   ],
-  providers: [TaskService],
+  providers: [TaskService,CepService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

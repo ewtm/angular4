@@ -9,7 +9,7 @@ import { TaskService } from '../task.service';
 })
 export class TaskNewComponent {
 
-  task:Task{
+  task:Task = {
     name: "",
     value:0,
     date_launch :"2017-07-07"
