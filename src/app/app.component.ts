@@ -11,6 +11,7 @@ import { TaskService } from './task.service';
 export class AppComponent {
  
   title = 'Buscar Cep';
+  titleTarefas = "Tarefas";
   tasks:Array<Task> ;
 
 /*

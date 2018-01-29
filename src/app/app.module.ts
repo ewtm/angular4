@@ -13,6 +13,13 @@ import { TaskService } from './task.service';
 import { CepComponent } from './cep/cep.component';
 import { CepService } from './cep.service';
 import { HttpModule } from '@angular/http';
+import { RouterModule,Routes } from '@angular/router';
+
+const appRoutes:Routes = [
+  {path:'tasks',component:TaskListComponent},
+  {path:'tasks/new',component:TaskNewComponent}  
+  
+
 
 @NgModule({
   declarations: [
@@ -27,7 +34,8 @@ import { HttpModule } from '@angular/http';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [TaskService,CepService],
   bootstrap: [AppComponent]
